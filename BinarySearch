@@ -1,0 +1,28 @@
+//BinarySearch
+
+public static void BinarySearch(int[] arr, int searchKey, out int searchKeyIndex)
+{
+    searchKeyIndex = -1;
+
+    int low = 0;
+    int high = arr.Length - 1;
+    
+
+    while (low <= high)
+    {
+        int middle = low + (high - low) / 2;
+        if (arr[middle] == searchKey)
+        {
+            searchKeyIndex = middle;
+            break;
+        }
+        else if (arr[middle] < searchKey)
+        {
+            low = middle + 1;
+        }
+        else
+        {
+            high = middle - 1;
+        }
+    }
+}
